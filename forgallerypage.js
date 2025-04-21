@@ -15,13 +15,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let lastScrollTime = 0;
     const scrollDebounceDelay = 16; // ~60fps
 
-    // Detect mobile screens (based on your CSS breakpoints: <=858px)
+    // Detect mobile screens
     const isMobile = () => window.innerWidth <= 858;
 
     // Adjust parallax speeds for mobile
     const getParallaxSpeeds = () => {
         if (isMobile()) {
-            return { speed1: 0.3, speed2: 0.15 }; // Slower speeds for mobile
+            return { speed1: 0.1, speed2: 0.05 }; // Even slower speeds for mobile
         }
         return { speed1: 0.5, speed2: 0.3 }; // Original speeds for desktop
     };
@@ -64,9 +64,9 @@ document.addEventListener("DOMContentLoaded", function () {
             firstImage.style.transform = `translateY(${offset1}px)`;
 
             // Calculate the maximum translateY for the second image to stop at the copyright footer
-            const footerTop = footerRect.top + currentScrollPosition; // Absolute top position of footer
-            const secondImageHeight = secondImage.offsetHeight; // Height of the second image
-            const maxOffset2 = footerTop - initialTop - secondImageHeight; // Max translateY to keep image above footer
+            const footerTop = footerRect.top + currentScrollPosition;
+            const secondImageHeight = secondImage.offsetHeight;
+            const maxOffset2 = footerTop - initialTop - secondImageHeight;
             const offset2 = Math.min(currentScrollPosition * speed2, maxOffset2);
             secondImage.style.transform = `translateY(${offset2}px)`;
 
@@ -79,6 +79,9 @@ document.addEventListener("DOMContentLoaded", function () {
         // Update last scroll position
         lastScrollPosition = currentScrollPosition;
     }
+
+    // Attach scroll event listener
+    window.addEventListener("scroll", handleScroll);
 
     // Navigation buttons with error checking
     const homeButton = document.getElementById("home");
@@ -111,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     if (galleryButton) {
+
         galleryButton.onclick = function () {
             location.href = "gallery-page.html";
         };
