@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
     checkVisibility();
 
     // Navigation link handlers
-    document.getElementById("gallery").onclick = function () {
+    document.getElementById("gallery-page").onclick = function () {
         location.href = "gallery-page.html";
     };
 

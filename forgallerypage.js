@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const homeButton = document.getElementById("home");
     const contactButton = document.getElementById("goContact");
     const teamButton = document.getElementById("team");
-    const galleryButton = document.getElementById("gallery");
+    const galleryButton = document.getElementById("gallery-page");
 
     if (homeButton) {
         homeButton.onclick = function () {
