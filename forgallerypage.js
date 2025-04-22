@@ -84,41 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", handleScroll);
 
     // Navigation buttons with error checking
-    const homeButton = document.getElementById("home");
-    const contactButton = document.getElementById("goContact");
-    const teamButton = document.getElementById("team");
-    const galleryButton = document.getElementById("gallery-page");
-
-    if (homeButton) {
-        homeButton.onclick = function () {
-            location.href = "index.html";
-        };
-    } else {
-        console.warn("Home button with id='home' not found in the HTML.");
-    }
-
-    if (contactButton) {
-        contactButton.onclick = function () {
-            location.href = "contact-page.html";
-        };
-    } else {
-        console.warn("Contact button with id='goContact' not found in the HTML.");
-    }
-
-    if (teamButton) {
-        teamButton.onclick = function () {
-            location.href = "team-page.html";
-        };
-    } else {
-        console.warn("Team button with id='team' not found in the HTML.");
-    }
-
-    if (galleryButton) {
-
-        galleryButton.onclick = function () {
-            location.href = "gallery-page.html";
-        };
-    } else {
-        console.warn("Gallery button with id='gallery' not found in the HTML.");
-    }
+    document.getElementById("gallery-page").onclick = function () {
+        location.href = "gallery-page.html";
+    };
 });
