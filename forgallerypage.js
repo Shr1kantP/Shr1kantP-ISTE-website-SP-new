@@ -1,4 +1,3 @@
- HEAD
 document.addEventListener("DOMContentLoaded", function () {
     // Parallax effect for background images
     const parallaxImages = document.querySelectorAll(".parallax-layer img");
