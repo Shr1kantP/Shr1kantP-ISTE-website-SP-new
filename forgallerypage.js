@@ -83,8 +83,13 @@ document.addEventListener("DOMContentLoaded", function () {
     // Attach scroll event listener
     window.addEventListener("scroll", handleScroll);
 
+    document.getElementById("home-page").onclick = function () {
+        location.href = "index.html"
+    };
+
     // Navigation buttons with error checking
     document.getElementById("gallery-page").onclick = function () {
-        location.href = "gallery-page.html";
+        location.href = "gallery-page.html"
     };
+
  });
