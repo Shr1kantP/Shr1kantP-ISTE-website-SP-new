@@ -11,7 +11,7 @@ body {
     font-weight: 600;
     min-height: 500px;
     color: #000000;
-    cursor: url('blue-cursor-pointer.cur'), auto;
+    cursor: url('cursor/cursor.cur'), auto;
 }
 
 /* Fixed Background */
@@ -103,15 +103,16 @@ parallax-layer {
 
 /* Navigation Styles */
 nav {
-    background-color: rgb(255, 255, 255);
-    height: 50px;
+    background-color: #00000000;
+    backdrop-filter: blur(7px);
+    height: 60px;
     width: 100%;
     display: flex;
-    position: fixed;
+    position: sticky;
     top: 0;
     align-items: center;
     justify-content: space-between;
-    padding: 0 30px;
+    padding: 0 20px;
     z-index: 1000;
 }
 
@@ -133,19 +134,25 @@ nav ul li {
 }
 
 nav ul li a {
+    font-family: 'Orbitron', sans-serif;
     font-weight: 800;
     text-decoration: none;
-    color: #000000;
+    color: #ffffff;
     padding: 8px 12px;
-    border-radius: 15px;
+    border-radius: 5px;
     text-transform: uppercase;
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #00A1FF;
+    background-color: #ffffff;
     color: #000000;
     transform: translate(3px, 3px);
+    box-shadow: 5px 5px 0px #00A1FF;
+}
+
+nav ul li a.active {
+    background-color: #00A1FF;
     box-shadow: 5px 5px 0px #000000;
 }
 
@@ -157,7 +164,7 @@ nav ul li a:hover {
 /* Hamburger Menu */
 .checkbtn {
     font-size: 24px;
-    color: black;
+    color: #ff0000;
     cursor: pointer;
     line-height: 68px;
     display: none;
@@ -172,16 +179,18 @@ nav ul li a:hover {
     nav ul {
         display: none;
         flex-direction: column;
-        position: absolute;
-        top: 45px;
-        left: 0px;
+        position: fixed;
+        top: -9px;
+        left: 0;
+        height: 300px;
         width: 100%;
-        height: 1000px;
-        background-color: white;
-        /* backdrop-filter: blur(40px); */
+        background-color: #00000085;
+        backdrop-filter: none;
+        gap: 38px;
+        z-index: -1;
+        backdrop-filter: blur(8px);
         padding: 20px 0;
-        gap: 10px;
-        /* max-height: 1800px; */
+        /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
     }
 
     nav ul li {
@@ -232,7 +241,7 @@ nav ul li a:hover {
     position: relative;
     width: 900px;
     margin: 0 auto;
-    height: 450px;
+    height: 500px;
     overflow: hidden;
     border: 4px solid #000000;
     border-radius: 10px;
@@ -348,11 +357,11 @@ nav ul li a:hover {
     }
 }
 
-/* Welcome Text Styles */
+/* Welcome Text (Welcome to ISTE Tsecs official web portal) Styles */
 .welcome-text {
     font-size: 40px;
     font-weight: 700;
-    color: #000000;
+    color: #ffffff;
     text-shadow: 3px 3px 0px #00A1FF;
     margin-bottom: 60px;
     line-height: 1.8;
@@ -511,7 +520,8 @@ nav ul li a:hover {
 .site-footer {
     position: static;
     margin-top: 90px;
-    background-color: #000000;
+    background-color: transparent;
+    backdrop-filter: blur(4px);
     color: #ffffff;
     padding: 40px 20px;
     position: relative;
@@ -645,11 +655,7 @@ nav ul li a:hover {
         font-size: 18px;
     }
 
-    nav ul {
-        height: auto;
-        padding: 15px 0;
-        gap: 15px;
-    }
+   
 
     nav ul li {
         margin: 10px 0;
@@ -924,7 +930,7 @@ nav ul li a:hover {
 
     /* Mobile Background */
     body {
-        background-image: url('images/beige-grid.png');
+        background-image: url('images/background-pitch black.png');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -1030,7 +1036,7 @@ nav ul li a:hover {
         height: 30px;
     }
 
-    /* Welcome */
+    /* Welcome to tsec Text is here*/
     .welcome-text {
         font-size: 24px;
         margin-bottom: 30px;

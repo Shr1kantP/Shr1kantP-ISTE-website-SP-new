@@ -12,7 +12,8 @@
 
 <body>
     <div class="image-background">
-        <img src="images/beige-grid.png">
+        <!-- <img src="images/beige-grid.png"> -->
+        <img src="images/background-pitch black space empty.png">
     </div>
     <div class="parallax-layer">
         <img src="images/transparent-bg.png" alt="Parallax Layer">
@@ -27,36 +28,55 @@
             <i class="fa-solid fa-bars"></i>
         </label>
         <ul class="nav-list">
-            <li><a href="#" class="button">Home</a></li>
+            <li><a id="home-page" class="button">Home</a></li>
             <!-- <li><a id="team" class="button">Team</a></li> -->
             <li><a id="gallery-page" class="button">Gallery</a></li>
-            <!-- <li><a id="goContact" class="button">Events</a></li> -->
+            <li><a id="goEvent" class="button">Events</a></li>
         </ul>
     </nav>
+
+    <!--Floating Images Here-->
     <main class="container">
         <div class="gallery-container">
-            <h1 class="gallery-title">Past Events</h1>
+            <!-- <h1 class="gallery-title">Past Events</h1> -->
             <div class="fade-slider">
+
                 <div class="slide active">
                     <img src="vortexgang.png" alt="Committee Photo">
                     <div class="slide-caption">Vortex'25 Team</div>
                 </div>
+
                 <div class="slide">
                     <img src="images/dhvani_winning.jpg" alt="Event Photo">
-                    <div class="slide-caption">Team Dhvani</div>
+                    <div class="slide-caption">Team Dhvani at Technofest'25</div>
                 </div>
+
                 <div class="slide">
-                    <img src="GG_image.jpg" alt="Group Photo">
-                    <div class="slide-caption">Annual Gathering 2024</div>
+                    <img src="images/lan_tourni_2.jpg" alt="Gamers photo">
+                    <div class="slide-caption">Gamers Gauntlet S2 LAN Tournament</div>
                 </div>
+
+                <div class="slide">
+                    <img src="images/codex_coding.jpg" alt="Gamers photo">
+                    <div class="slide-caption">Codex at Vortex'25</div>
+                </div>
+
+                <div class="slide">
+                    <img src="images/MUN.png" alt="MUN photo">
+                    <div class="slide-caption">Model United Nation(MUN) hosted at Vortex'25</div>
+                </div>
+
                 <button class="slider-arrow prev-arrow"><i class="fa-solid fa-chevron-left"></i></button>
                 <button class="slider-arrow next-arrow"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
             <div class="gallery-thumbnails">
                 <div class="thumbnail active"><img src="vortexgang.png" alt="Thumbnail 1"></div>
                 <div class="thumbnail"><img src="images/dhvani_winning.jpg" alt="Thumbnail 2"></div>
-                <div class="thumbnail"><img src="GG_image.jpg" alt="Thumbnail 3"></div>
+                <div class="thumbnail"><img src="images/lan_tourni_2.jpg" alt="Thumbnail 3"></div>
+                <div class="thumbnail"><img src="images/codex_coding.jpg" alt="Thumbnail 4"></div>
+                <div class="thumbnail"><img src="images/MUN.png" alt="Thumbnail 5"></div>
             </div>
+
         </div>
         <section class="welcome-text" data-reveal>
             <p>Welcome to ISTE TSEC's official web portal</p>

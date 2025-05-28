@@ -3,20 +3,19 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="event-page.css">
   <script src="https://kit.fontawesome.com/944c360afb.js" crossorigin="anonymous"></script>
-
-  <title>ISTE-EVENTS</title>
+  <title>ISTE TSEC</title>
 </head>
 
 <body>
+  <!--<div class="image-background">
+    <img src="images/beige-grid.png">
+  </div> -->
 
-
-  <!-- Header Section -->
   <nav>
     <div class="top-logo">
       <img src="tsecxiste.png" alt="Logo">
@@ -26,130 +25,160 @@
       <i class="fa-solid fa-bars"></i>
     </label>
     <ul class="nav-list">
-      <li><a id="goHome" class="button">Home</a></li>
-      <!--
-      <li><a id="goTeam" class="button">Team</a></li>
-      <li><a id="goContact" class="button">Contact</a></li>
-      -->
-      <li><a id="Brochure" class="button">Brochure</a></li>
-      <li><a id="registerButton" class="button golden-button">Register</a></li>
+      <li><a id="index" class="button">Home</a></li>
+      <!-- <li><a id="team" class="button">Team</a></li> -->
+      <li><a id="gallery-page" class="button">Gallery</a></li>
+      <li><a id="goEvent" class="button">Events</a></li>
     </ul>
   </nav>
-<!---->
- <div class="live-events-container">
-  <h2 class="live-events-heading">Live Events</h2>
-</div>
+  <main>
+    <div class="neo-container">
+      <h1 class="neo-title">(EVENT NAME) Registration</h1>
+      <form id="registration-form"
+        action="https://script.google.com/macros/s/AKfycby_L55VMShz8HHsGado37rLGCqqsQskTaGr06VNwGmPs__1Ao2lMo63-x6AEBdIKXy-tw/exec"
+        method="POST" enctype="multipart/form-data" class="form-grid">
+        <div class="neo-section">
+          <label class="neo-label">College Name</label>
+          <input type="text" id="college-name" name="collegeName" class="neo-input" placeholder="Enter college name"
+            required>
+        </div>
+        <div class="neo-section">
+          <label class="neo-label">Field of Education</label>
+          <select id="field-education" name="fieldEducation" class="neo-input" onchange="toggleOtherField()" required>
+            <option value="Diploma">Diploma</option>
+            <option value="Jr Science Colleges">Jr Science Colleges</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div id="other-field" class="neo-section hidden">
+          <label class="neo-label">Field of Education (Other)</label>
+          <input type="text" id="field-education-other" name="fieldEducation" class="neo-input"
+            placeholder="Specify field">
+        </div>
+        <div class="neo-section">
+          <label class="neo-label">Department</label>
+          <input type="text" id="department" name="department" class="neo-input" placeholder="Enter department"
+            required>
+        </div>
+        <div class="neo-section full-width">
+          <label class="neo-label">Day 1 Event (Select one)</label>
+          <div class="flex flex-col gap-4 sm:flex-row sm:gap-8">
+            <label class="neo-radio-label"><input type="radio" name="day_1_event" value="Workshop" class="neo-radio">
+              Day 1 Event no 1 (Workshop)</label>
+            <label class="neo-radio-label"><input type="radio" name="day_1_event" value="Seminar" class="neo-radio"> Day
+              1 Event no 2 (Seminar)</label>
+            <label class="neo-radio-label"><input type="radio" name="day_1_event" value="Hackathon" class="neo-radio">
+              Day 1 Event no 3 (Hackathon)</label>
+            <label class="neo-radio-label"><input type="radio" name="day_1_event" value="" class="neo-radio">
+              None</label>
+          </div>
+        </div>
+        <div class="neo-section full-width">
+          <label class="neo-label">Day 2 Event (Select one)</label>
+          <div class="flex flex-col gap-4 sm:flex-row sm:gap-8">
+            <label class="neo-radio-label"><input type="radio" name="day_2_event" value="Quiz" class="neo-radio"> Day 2
+              Event no 1 (Quiz)</label>
+            <label class="neo-radio-label"><input type="radio" name="day_2_event" value="Project Showcase"
+                class="neo-radio"> Day 2 Event no 2 (Project Showcase)</label>
+            <label class="neo-radio-label"><input type="radio" name="day_2_event" value="Panel Discussion"
+                class="neo-radio"> Day 2 Event no 3 (Panel Discussion)</label>
+            <label class="neo-radio-label"><input type="radio" name="day_2_event" value="" class="neo-radio">
+              None</label>
+          </div>
+        </div>
+        <div class="neo-section">
+          <label class="neo-label">Participant 1 (Leader)</label>
+          <input type="text" id="name_of_leader" name="name_of_leader" class="neo-input mb-4" placeholder="Name"
+            required>
+          <input type="tel" id="phone_no_of_leader" name="phone_no_of_leader" class="neo-input mb-4"
+            placeholder="Phone Number" required>
+          <input type="email" id="email_of_leader" name="email_of_leader" class="neo-input" placeholder="Email"
+            required>
+        </div>
+        <div class="neo-section">
+          <label class="neo-label">Participant 2 (Crew)</label>
+          <input type="text" id="name_of_participant_2" name="name_of_participant_2" class="neo-input mb-4"
+            placeholder="Name">
+          <input type="tel" id="phone_no_of_participant_2" name="phone_no_of_participant_2" class="neo-input mb-4"
+            placeholder="Phone Number">
+          <input type="email" id="email_of_participant_2" name="email_of_participant_2" class="neo-input"
+            placeholder="Email">
+        </div>
+        <div class="neo-section">
+          <label class="neo-label">Participant 3 (Crew)</label>
+          <input type="text" id="name_of_participant_3" name="name_of_participant_3" class="neo-input mb-4"
+            placeholder="Name">
+          <input type="tel" id="phone_no_of_participant_3" name="phone_no_of_participant_3" class="neo-input mb-4"
+            placeholder="Phone Number">
+          <input type="email" id="email_of_participant_3" name="email_of_participant_3" class="neo-input"
+            placeholder="Email">
+        </div>
+        <div class="neo-section full-width">
+          <label class="neo-label">Photos of Participants</label>
+          <div class="flex flex-col gap-4 sm:flex-row sm:gap-8">
+            <input type="file" id="pictures_of_all_participants" name="pictures_of_all_participants" class="file-upload"
+              accept="image/*">
+          </div>
+        </div>
+        <div class="neo-section full-width">
+          <label class="neo-label">QR Payment Scan</label>
+          <p class="text-sm text-gray-300 mb-3">Scan the QR code below to make the payment, then upload proof of your
+            transaction.</p>
+          <img src="https://img.freepik.com/free-vector/qr-code-concept-illustration_114360-23446.jpg"
+            alt="Sample QR Code for Payment" class="qr-image">
+          <!-- <input type="file" id="qr-payment" name="qrPayment" class="file-upload" accept="image/*" required> -->
+        </div>
+        <div class="neo-section full-width">
+          <label class="neo-label">Proof of Payment</label>
+          <input type="file" id="paymentproof" name="paymentProof" class="file-upload" accept="image/*" required>
+        </div>
+        <div class="neo-section full-width">
+          <label class="neo-label">Questions about Vortex</label>
+          <textarea id="questions" name="questions" class="neo-textarea" rows="5"
+            placeholder="Enter your cosmic queries"></textarea>
+        </div>
+        <div id="progress-container" class="progress-container">
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+          <p id="progress-text" class="progress-text">Uploading...</p>
+        </div>
+        <button type="submit" id="submit-btn" class="neo-button full-width">Launch into Vortex</button>
+      </form>
+    </div>
+  </main>
 
-  <div class="cards-container">
-  <!-- Event 1 -->
-  <div class="card">
-    <div class="content">
-      <div class="back">
-        <div class="back-content">
-          <div class="img-container">
-            <img src="1.png" alt="Event 1">
-          </div>
-        </div>
-      </div>
-      <div class="front">
-        <div class="front-content">
-          <small class="badge">State level Event</small>
-          <div class="description">
-            <div class="title">
-              <p class="title"><strong>Day 1</strong></p>
-            </div>
-            <p class="card-footer">27/02/2025 &nbsp; | &nbsp; 09:00am</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="reg-button">
-      <a href="https://forms.gle/CkpJio4Erc4RvWMaA">
-      <button class="btn">Register Now</button>
-    </a>
-    </div>
-  </div>
-
-  <!-- Event 2 -->
-  <div class="card">
-    <div class="content">
-      <div class="back">
-        <div class="back-content">
-          <div class="img-container">
-            <img src="2.png" alt="Event 2">
-          </div>
-        </div>
-      </div>
-      <div class="front">
-        <div class="front-content">
-          <small class="badge">Gaming Events</small>
-          <div class="description">
-            <div class="title">
-              <p class="title"><strong>Day 2</strong></p>
-            </div>
-            <p class="card-footer">27th & 28th Feb&nbsp; | &nbsp; 09:00am</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="reg-button">
-      <a href="https://forms.gle/XUT5DdUgsKLooRGW6">
-      <button class="btn">Register Now</button>
-    </a>
-    </div>
-  </div>
-
-  <!-- Event 3 -->
-  <div class="card">
-    <div class="content">
-      <div class="back">
-        <div class="back-content">
-          <div class="img-container">
-            <img src="gamecraft poster.png" alt="Event 3">
-          </div>
-        </div>
-      </div>
-      <div class="front">
-        <div class="front-content">
-          <small class="badge">GameCraft</small>
-          <div class="description">
-            <div class="title">
-              <p class="title"><strong>Day 1 & 2</strong></p>
-            </div>
-            <p class="card-footer">27th & 28th Feb &nbsp; | &nbsp; 09:00am</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="reg-button">
-      <a href="https://docs.google.com/forms/d/18yreO9pr0saKlKmqjPlmkZbjEpptEqPDwik4L9q3iaY/edit?ts=67b198b0">
-      <button class="btn">Register Now</button>
-    </a>
-    </div>
-  </div>
-</div>
-
-</div> <!--This is Card Container-->
-
-  <footer class="site-footer">
+  <footer class="site-footer" data-reveal>
     <div class="footer-container">
-      <!-- About Section -->
-      <div class="footer-column">
-        <h2>Address</h2>
-        <p class="text-justify">
-          ZSCT's Thakur Shyamnarayan Engineering College, </p>
-        <p> Thakur Complex,West to Western Express Highway,</p>
-        <p> Kandivali (E), Mumbai - 400 101</p>
+      <div class="footer-column address">
+        <h2>
+          <svg class="footer-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z"
+              fill="#00A1FF" />
+          </svg>
+          Address
+        </h2>
+        <p>ZSCT's Thakur Shyamnarayan Engineering College,</p>
+        <p>Thakur Complex, West to Western Express Highway,</p>
+        <p>Kandivali (E), Mumbai - 400 101</p>
       </div>
-
-      <!-- Categories Section -->
-      <div class="footer-column">
-        <h2>For Queries Contact</h2>
+      <div class="footer-column contact">
+        <h2>
+          <svg class="footer-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.24 1.02l-2.2 2.2z"
+              fill="#00A1FF" />
+          </svg>
+          For Queries Contact
+        </h2>
         <ul class="footer-links">
           <li>
-            <p>
-            <h3>Shreyas Poddar</h3>
-            </p>
+            <p>Shreyas Poddar</p>
+          </li>
           <li>
             <p>CONTACT: 8450935671</p>
           </li>
@@ -161,25 +190,54 @@
           </li>
         </ul>
       </div>
-
-      <!-- Quick Links Section -->
-      <div class="footer-column">
+      <div class="footer-column quick-links">
         <h2>Quick Links</h2>
         <ul class="footer-links">
-          <li><a href="https://www.instagram.com/tsec_iste/">Instagram</a></li>
-          <li><a href="https://x.com/tsec_iste">Twitter / X</a></li>
-          <li><a href="mailto:iste@tpoly.in">Mail us</a></li>
+          <li>
+            <a href="https://www.instagram.com/tsec_iste/">
+              <svg class="footer-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.326 3.608 1.301.975.975 1.24 2.242 1.301 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.326 2.633-1.301 3.608-.975.975-2.242 1.24-3.608 1.301-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.326-3.608-1.301-.975-.975-1.24-2.242-1.301-3.608-.058-1.266-.07-1.646-.07-4.85s.012-3.584.07-4.85c.062-1.366.326-2.633 1.301-3.608.975-.975 2.242-1.24 3.608-1.301 1.266-.058 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-1.453.066-2.918.357-4.016 1.455-1.098 1.098-1.39 2.563-1.455 4.016-.058 1.28-.072 1.688-.072 4.947s.014 3.667.072 4.947c.066 1.453.357 2.918 1.455 4.016 1.098 1.098 2.563 1.39 4.016 1.455 1.28.058 1.688.072 4.947.072s3.667-.014 4.947-.072c1.453-.066 2.918-.357 4.016-1.455 1.098-1.098 1.39-2.563 1.455-4.016.058-1.28.072-1.688.072-4.947s-.014-3.667-.072-4.947c-.066-1.453-.357-2.918-1.455-4.016-1.098-1.098-2.563-1.39-4.016-1.455-1.28-.058-1.688-.072-4.947-.072z"
+                  fill="#00A1FF" />
+                <path
+                  d="M12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.324c-2.297 0-4.162-1.865-4.162-4.162s1.865-4.162 4.162-4.162 4.162 1.865 4.162 4.162-1.865 4.162-4.162 4.162zm6.406-11.845c-.796 0-1.441.645-1.441 1.441s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.441-1.441-1.441z"
+                  fill="#00A1FF" />
+              </svg>
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/tsec_iste">
+              <svg class="footer-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+                  fill="#00A1FF" />
+              </svg>
+              Twitter / X
+            </a>
+          </li>
+          <li>
+            <a href="mailto:iste@tpoly.in">
+              <svg class="footer-icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 2v.01L12 12l8-5.99V6H4zm16 12V8.83l-8 5.99-8-5.99V18h16z"
+                  fill="#00A1FF" />
+              </svg>
+              Mail us
+            </a>
+          </li>
         </ul>
       </div>
     </div>
-
   </footer>
 
-  <div class="copyright-footer">
-    <p>&copy; 2024 ISTE TSEC. All Rights Reserved. | Designed by ISTE TSEC Tech Team</p>
+  <div class="copyright-footer" data-reveal>
+    <p>© 2024 ISTE TSEC. All Rights Reserved. | Designed by ISTE TSEC Tech Team</p>
   </div>
-
+  <script src="index.js"></script>
 </body>
-<script src="foreventpage.js"></script>
 
 </html>

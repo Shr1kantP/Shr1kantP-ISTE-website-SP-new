@@ -2,167 +2,144 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Example.css">
-    <script src="https://kit.fontawesome.com/944c360afb.js" crossorigin="anonymous"></script>
-    <title>ISTE TSEC</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(Event Name) Registration</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="Example.css">
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="image-background">
-        <img src="beige-grid.png">
-    </div>
-    <div class="parallax-layer">
-        <img src="transparent-bg.png" alt="Parallax Layer">
-    </div>
-    <nav>
-        <div class="top-logo">
-            <img src="tsecxiste.png" alt="Logo">
+  <div class="neo-container">
+    <h1 class="neo-title">(EVENT NAME) Registration</h1>
+    <form id="registration-form"
+      action="https://script.google.com/macros/s/AKfycbyo2CDciM96udeQcuDsISoMQQh2e1n9B2CNS2k7i5s9hHJqo-Q_fpiAGevDWh5ROxJd-g/exec"
+      method="POST" enctype="multipart/form-data" class="form-grid">
+      <div class="neo-section">
+        <label class="neo-label">College Name</label>
+        <input type="text" id="college-name" name="collegeName" class="neo-input" placeholder="Enter college name"
+          required>
+      </div>
+      <div class="neo-section">
+        <label class="neo-label">Field of Education</label>
+        <select id="field-education" name="fieldEducation" class="neo-input" onchange="toggleOtherField()" required>
+          <option value="Diploma">Diploma</option>
+          <option value="Jr Science Colleges">Jr Science Colleges</option>
+          <option value="Engineering">Engineering</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+      <div id="other-field" class="neo-section hidden">
+        <label class="neo-label">Field of Education (Other)</label>
+        <input type="text" id="field-education-other" name="fieldEducation" class="neo-input"
+          placeholder="Specify field">
+      </div>
+      <div class="neo-section">
+        <label class="neo-label">Department</label>
+        <input type="text" id="department" name="department" class="neo-input" placeholder="Enter department" required>
+      </div>
+      <div class="neo-section full-width">
+        <label class="neo-label">Day 1 Events (Select all that apply)</label>
+        <div class="flex flex-col gap-4 sm:flex-row sm:gap-8">
+          <label class="neo-radio-label">
+            <input type="checkbox" name="day_1_events[]" value="Workshop" class="neo-checkbox"> Day 1 Event no 1
+            [Workshop]
+          </label>
+          <label class="neo-radio-label">
+            <input type="checkbox" name="day_1_events[]" value="Seminar" class="neo-checkbox"> Day 1 Event no 2
+            [Seminar]
+          </label>
+          <label class="neo-radio-label">
+            <input type="checkbox" name="day_1_events[]" value="Hackathon" class="neo-checkbox"> Day 1 Event no 3
+            [Hackathon]
+          </label>
+          <label class="neo-radio-label">
+            <input type="checkbox" name="day_1_events[]" value="None" class="neo-checkbox"
+              onchange="toggleNone('day_1_events[]')"> None
+          </label>
         </div>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fa-solid fa-bars"></i>
-        </label>
-        <ul class="nav-list">
-            <li><a href="#" class="button">Home</a></li>
-            <li><a id="team" class="button">Team</a></li>
-            <li><a id="goContact" class="button">Events</a></li>
-            <li><a id="Brochure" class="button">Brochure</a></li>
-        </ul>
-    </nav>
-    <main class="container">
-        <div class="gallery-container">
-            <h1 class="gallery-title">Event Gallery</h1>
-
-            <div class="fade-slider">
-                <div class="slide active">
-                    <img src="committee photo.jpg" alt="Committee Photo">
-                    <div class="slide-caption">Committee Meet 2024</div>
-                </div>
-                <div class="slide">
-                    <img src="2nd image.jpg" alt="Event Photo">
-                    <div class="slide-caption">Tech Workshop 2024</div>
-                </div>
-                <div class="slide">
-                    <img src="GG_image.jpg" alt="Group Photo">
-                    <div class="slide-caption">Annual Gathering 2024</div>
-                </div>
-                <button class="slider-arrow prev-arrow"><i class="fa-solid fa-chevron-left"></i></button>
-                <button class="slider-arrow next-arrow"><i class="fa-solid fa-chevron-right"></i></button>
-            </div>
-
-            <div class="gallery-thumbnails">
-                <div class="thumbnail active"><img src="committee photo.jpg" alt="Thumbnail 1"></div>
-                <div class="thumbnail"><img src="2nd image.jpg" alt="Thumbnail 2"></div>
-                <div class="thumbnail"><img src="GG_image.jpg" alt="Thumbnail 3"></div>
-            </div>
+      </div>
+      <div class="neo-section full-width">
+        <label class="neo-label">Day 2 Events (Select all that apply)</label>
+        <div class="flex flex-col gap-4 sm:flex-row sm:gap-8">
+          <label class="neo-radio-label">
+            <input type="checkbox" name="day_2_events[]" value="Quiz" class="neo-checkbox"> Day 2 Event no 1 [Quiz]
+          </label>
+          <label class="neo-radio-label">
+            <input type="checkbox" name="day_2_events[]" value="Project Showcase" class="neo-checkbox"> Day 2 Event no 2
+            [Project Showcase]
+          </label>
+          <label class="neo-radio-label">
+            <input type="checkbox" name="day_2_events[]" value="Panel Discussion" class="neo-checkbox"> Day 2 Event no 3
+            [Panel Discussion]
+          </label>
+          <label class="neo-radio-label">
+            <input type="checkbox" name="day_2_events[]" value="None" class="neo-checkbox"
+              onchange="toggleNone('day_2_events[]')"> None
+          </label>
         </div>
-
-        <section class="welcome-text" data-reveal>
-            <p>Welcome to ISTE TSEC's official web portal</p>
-        </section>
-        <section class="welcome-section" data-reveal>
-            <h1>Welcome <span class="highlight">Visitors</span></h1>
-            <p>
-                ISTE Student's Chapter TSEC MH-116 is a prestigious, nationally acclaimed society,
-                proudly affiliated with ISTE New Delhi. Dedicated to fostering technical excellence and innovation,
-                the chapter provides a dynamic platform for students to develop unparalleled expertise in technical
-                skills, leadership, and management capabilities.
-                With a strong focus on holistic personality development,
-                ISTE TSEC MH-116 equips students with the tools and confidence to thrive in a highly competitive and
-                technologically driven global environment.
-            </p>
-        </section>
-
-
-        <section class="vision-mission-container" data-reveal>
-            <div class="vision-mission-section">
-                <h1>Vision <span class="highlight"></span></h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                    est
-                    laborum
-                </p>
-            </div>
-            <div class="vision-mission-section">
-                <h1>Mission <span class="highlight"></span></h1>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et
-                    dolore magna aliqua.
-                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                    pariatur.
-                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                    est
-                    laborum
-                </p>
-            </div>
-        </section>
-
-        <section class="stats" data-reveal>
-            <div class="stat-item">
-                <span class="stat-number">100+</span>
-                <span class="stat-label">Events Hosted</span>
-                <span class="stat-icon">📅</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number">200+</span>
-                <span class="stat-label">Members</span>
-                <span class="stat-icon">👥</span>
-            </div>
-        </section>
-    </main>
-    <footer class="site-footer" data-reveal>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h2>Address</h2>
-                <p>ZSCT's Thakur Shyamnarayan Engineering College, </p>
-                <p>Thakur Complex, West to Western Express Highway,</p>
-                <p>Kandivali (E), Mumbai - 400 101</p>
-            </div>
-            <div class="footer-column">
-                <h2>For Queries Contact</h2>
-                <ul class="footer-links">
-                    <li>
-                        <h3>Shreyas Poddar</h3>
-                    </li>
-                    <li>
-                        <p>CONTACT: 8450935671</p>
-                    </li>
-                    <li>
-                        <p>CONTACT: 8169036397</p>
-                    </li>
-                    <li>
-                        <p>CONTACT: 9324178323</p>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h2>Quick Links</h2>
-                <ul class="footer-links">
-                    <li><a href="https://www.instagram.com/tsec_iste/">Instagram</a></li>
-                    <li><a href="https://x.com/tsec_iste">Twitter / X</a></li>
-                    <li><a href="mailto:iste@tpoly.in">Mail us</a></li>
-                </ul>
-            </div>
+      </div>
+      <div class="neo-section">
+        <label class="neo-label">Participant 1 (Leader)</label>
+        <input type="text" id="name_of_leader" name="name_of_leader" class="neo-input mb-4" placeholder="Name" required>
+        <input type="tel" id="phone_no_of_leader" name="phone_no_of_leader" class="neo-input mb-4"
+          placeholder="Phone Number" required>
+        <input type="email" id="email_of_leader" name="email_of_leader" class="neo-input" placeholder="Email" required>
+      </div>
+      <div class="neo-section">
+        <label class="neo-label">Participant 2 (Crew)</label>
+        <input type="text" id="name_of_participant_2" name="name_of_participant_2" class="neo-input mb-4"
+          placeholder="Name">
+        <input type="tel" id="phone_no_of_participant_2" name="phone_no_of_participant_2" class="neo-input mb-4"
+          placeholder="Phone Number">
+        <input type="email" id="email_of_participant_2" name="email_of_participant_2" class="neo-input"
+          placeholder="Email">
+      </div>
+      <div class="neo-section">
+        <label class="neo-label">Participant 3 (Crew)</label>
+        <input type="text" id="name_of_participant_3" name="name_of_participant_3" class="neo-input mb-4"
+          placeholder="Name">
+        <input type="tel" id="phone_no_of_participant_3" name="phone_no_of_participant_3" class="neo-input mb-4"
+          placeholder="Phone Number">
+        <input type="email" id="email_of_participant_3" name="email_of_participant_3" class="neo-input"
+          placeholder="Email">
+      </div>
+      <div class="neo-section full-width">
+        <label class="neo-label">Photos of Participants</label>
+        <div class="flex flex-col gap-4 sm:flex-row sm:gap-8">
+          <input type="file" id="pictures_of_all_participants" name="pictures_of_all_participants" class="file-upload"
+            accept="image/*">
         </div>
-    </footer>
-    <div class="copyright-footer" data-reveal>
-        <p>© 2024 ISTE TSEC. All Rights Reserved. | Designed by ISTE TSEC Tech Team</p>
-    </div>
-    <script src="example.js"></script>
+      </div>
+      <div class="neo-section full-width">
+        <label class="neo-label">QR Payment Scan</label>
+        <p class="text-sm text-gray-300 mb-3">Scan the QR code below to make the payment, then upload proof of your
+          transaction.</p>
+        <img src="https://img.freepik.com/free-vector/qr-code-concept-illustration_114360-23446.jpg"
+          alt="Sample QR Code for Payment" class="qr-image">
+        <!-- <input type="file" id="qr-payment" name="qrPayment" class="file-upload" accept="image/*" required> -->
+      </div>
+      <div class="neo-section full-width">
+        <label class="neo-label">Proof of Payment</label>
+        <input type="file" id="paymentproof" name="paymentProof" class="file-upload" accept="image/*" required>
+      </div>
+      <div class="neo-section full-width">
+        <label class="neo-label">Questions about Vortex</label>
+        <textarea id="questions" name="questions" class="neo-textarea" rows="5"
+          placeholder="Enter your cosmic queries"></textarea>
+      </div>
+      <div id="progress-container" class="progress-container">
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <p id="progress-text" class="progress-text">Uploading...</p>
+      </div>
+      <button type="submit" id="submit-btn" class="neo-button full-width">Launch into Vortex</button>
+    </form>
+  </div>
+  <script src="example.js"></script>
 </body>
 
 </html>
+
