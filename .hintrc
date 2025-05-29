@@ -27,7 +27,15 @@
     "axe/name-role-value": [
       "default",
       {
-        "button-name": "off"
+        "button-name": "off",
+        "link-name": "off"
+      }
+    ],
+    "meta-viewport": "off",
+    "axe/parsing": [
+      "default",
+      {
+        "duplicate-id": "off"
       }
     ]
   }

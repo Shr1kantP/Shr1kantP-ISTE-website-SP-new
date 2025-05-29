@@ -171,6 +171,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+      const eventLink = document.getElementById("event-page");
+    if (eventLink) {
+        eventLink.addEventListener("click", () => {
+            window.location.assign("event-page.html");
+        });
+    }
+
+
     // Objective dropdown functionality
     const objectiveToggles = document.querySelectorAll(".objective-toggle");
     objectiveToggles.forEach((toggle) => {

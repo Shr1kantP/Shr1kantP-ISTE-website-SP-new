@@ -596,50 +596,9 @@ nav ul li a.active {
 @media (max-width: 858px) {
 
     /* Mobile Background */
-    body {
-        background-image: url('beige-grid.png');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-    }
-
-    /* Hide desktop image-background */
-    .image-background {
-        display: none;
-    }
-
-    /* Parallax layer */
-    .parallax-layer {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: -1;
-        pointer-events: none;
-    }
-
-    .parallax-layer img {
-        position: absolute;
-        left: 0;
-        width: 100%;
-        height: auto;
-        display: block;
-        opacity: 0.8;
-    }
-
-    .parallax-layer img:nth-child(1) {
-        top: 0;
-    }
-
-    .parallax-layer img:nth-child(2) {
-        top: 100%;
-    }
-
     /* Container */
     .container {
-        padding: 20px;
+        padding: 20p;
     }
 
     /* Navigation */
